@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oops</title>
+</head>
+<body>
+    <h2>JavaScript Object Constructors</h2>
+        
+    <script>
+        // Constructor function for Person objects
+        function Person(first, age) {
+          this.firstName = first;
+          this.age = age;
+
+            // object accessor
+            this.getfName = function(){
+                return this.firstName;
+            };
+              this.getAge = function() {
+                return this.age;
+            };
+        };
+
+        // create a new object using the constractor with the new keyword
+        var person2 = new Person("Mily Moradiya",19);
+
+        // Add new property to the object
+        person2.gender = "Female";
+
+        // create a function using new keyword
+        function intro(){
+            document.write("<h2>My name is " + this.getfName() + ", and I'm " + this.getAge() + " years old. I am a " + this.gender + ".</h2>");
+        }
+        intro.call(person2);
+    </script>
+</body>
+</html>
